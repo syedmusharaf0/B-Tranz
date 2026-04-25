@@ -25,7 +25,9 @@ import shutil
 load_dotenv()
 
 # ── FastAPI ──────────────────────────────────────────────────────────────────
-app = FastAPI(title="Btranz RAG API")
+app = FastAPI(title="Btranz RAG API",root_path="/api")
+
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -33,6 +35,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 
 # ── Embeddings ───────────────────────────────────────────────────────────────
 embeddings = HuggingFaceEmbeddings(
