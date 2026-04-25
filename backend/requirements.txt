@@ -1,0 +1,48 @@
+# Core Backend
+fastapi
+uvicorn
+python-dotenv
+langchain-classic
+# LangChain Core
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+
+# Pinecone Vector DB
+pinecone
+langchain-pinecone
+
+# HuggingFace Embeddings
+sentence-transformers
+transformers
+huggingface-hub
+langchain-groq
+groq
+# LLM Support
+google-generativeai
+openai
+langchain-google-genai
+# Document Processing
+pypdf
+pdfminer.six
+
+# Data handling
+numpy
+pandas
+
+# Utilities
+tiktoken
+requests
+
+# ML backend
+torch
+
+langchain-text-splitters
+
+langchain-huggingface
+sentence-transformers
+langchain-core
+pytesseract
+Pillow
+python-multipart

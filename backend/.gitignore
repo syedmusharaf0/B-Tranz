@@ -1,0 +1,17 @@
+# env
+.env
+
+# python
+__pycache__/
+*.pyc
+
+.env
+.venv/
+__pycache__/
+
+
+# virtual env
+.venv/
+
+# logs
+*.log
