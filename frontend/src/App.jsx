@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'https://b-tranz.onrender.com/api';   
+const API_URL = 'https://b-tranz.onrender.com/api';
 
 // ── Icons ────────────────────────────────────────────────────────────────────
 const IconPlus = () => (
