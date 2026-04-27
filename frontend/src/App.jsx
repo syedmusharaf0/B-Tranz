@@ -2,11 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-<<<<<<< HEAD
-const API_URL = 'https://b-tranz.onrender.com/api';
-=======
-const API_URL = "http://127.0.0.1:8000/api";
->>>>>>> 4c691ce (docker added)
+const API_URL = 'https://b-tranz.onrender.com/api'; 
 
 // ── Icons ────────────────────────────────────────────────────────────────────
 const IconPlus = () => (
