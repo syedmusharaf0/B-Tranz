@@ -30,7 +30,7 @@ app = FastAPI(title="Btranz RAG API",root_path="/api")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://your-frontend.vercel.app"],
+    allow_origins=["https://your-vercel-app.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
