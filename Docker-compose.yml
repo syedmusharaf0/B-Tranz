@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  # ── Backend ─────────────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: btranz-backend
+    ports:
+      - "10000:10000"
+    environment:
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - GROQ_API_KEY=${GROQ_API_KEY}
+      - LANGCHAIN_API_KEY=${LANGCHAIN_API_KEY}
+      - LANGCHAIN_TRACING_V2=${LANGCHAIN_TRACING_V2}
+      - LANGCHAIN_PROJECT=${LANGCHAIN_PROJECT}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:10000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Frontend ─────────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: btranz-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # Point to backend — use the service name inside Docker network
+      - NEXT_PUBLIC_API_URL=http://backend:10000/api
+      # OR for Vite:
+      # - VITE_API_URL=http://backend:10000/api
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
