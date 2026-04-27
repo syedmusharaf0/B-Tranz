@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'https://b-tranz-ai.vercel.app';
+const API_URL = "https://b-tranz-backend.onrender.com/api";
 
 // ── Icons ────────────────────────────────────────────────────────────────────
 const IconPlus = () => (
